@@ -30,13 +30,13 @@ unzip -q "$TMP_DIR/source.zip" -d "$TMP_DIR"
 cd "$TMP_DIR/cmon-main"
 
 echo "Building cmon from source..."
-make
+make > /dev/null 2>&1
 
 # Install to /usr/local/bin
 echo "Installing to /usr/local/bin/cmon..."
 sudo mv cmon /usr/local/bin/
 
-echo "----------------------------------------"
+echo "────────────────────────────────────────────────────────────────────────────────"
 echo "✅ cmon has been installed successfully!"
 echo "Type 'cmon' to start monitoring."
-echo "----------------------------------------"
+echo "────────────────────────────────────────────────────────────────────────────────"
