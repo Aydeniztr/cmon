@@ -17,10 +17,10 @@
 ## Installation
 
 ### The Quick Way (Recommended)
-You can install `cmon` directly using this one-liner (replace `yourusername` with your actual GitHub username after pushing):
+You can install `cmon` directly using this one-liner:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/yourusername/cmon/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/Aydeniztr/cmon/main/install.sh | bash
 ```
 
 ### Manual Build
@@ -33,7 +33,7 @@ If you prefer to build it yourself:
 
 **2. Build and Install**
 ```bash
-git clone https://github.com/yourusername/cmon.git
+git clone https://github.com/Aydeniztr/cmon.git
 cd cmon
 make
 sudo mv cmon /usr/local/bin/
