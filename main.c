@@ -178,7 +178,7 @@ void draw_bar(int y, int x, int width, float percentage, const char *extra, int 
     mvaddch(y, x, '[');
     int c = (percentage > 85.0f) ? 3 : color;
     attron(COLOR_PAIR(c));
-    for (int i = 0; i < filled; i++) mvaddstr(y, x + 1 + i, "█");
+    for (int i = 0; i < filled; i++) mvaddstr(y, x + 1 + i, "#");
     attroff(COLOR_PAIR(c));
     for (int i = filled; i < width - 2; i++) mvaddch(y, x + 1 + i, ' ');
     mvaddch(y, x + width - 1, ']');
@@ -223,7 +223,6 @@ int main() {
         format_bytes((curr_disk.write_sectors - prev_disk.write_sectors) * 1024, w_s);
         mvprintw(2, 0, "NET (%s): RX: %-10s TX: %-10s", primary_net, rx_s, tx_s);
         mvprintw(3, 0, "DSK (%s): R:  %-10s W:  %-10s", primary_disk, r_s, w_s);
-
         mvhline(4, 0, ACS_HLINE, cols);
 
         // Individual CPU Cores - Scalable layout
@@ -240,6 +239,7 @@ int main() {
         }
 
         mvprintw(rows - 1, 0, "Press 'q' to quit | Found %d cores", n_cpu);
+	mvprintw(rows - 1, cols - 23,"by Ahmet Yiğit AYDENİZ");
         refresh();
         memcpy(prev_cpu, curr_cpu, sizeof(CPU_Stats) * n_cpu);
         prev_net = curr_net; prev_disk = curr_disk;

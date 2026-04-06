@@ -2,13 +2,13 @@ CC = gcc
 CFLAGS = -Wall -O2 -D_XOPEN_SOURCE_EXTENDED=1
 LDFLAGS = -lncursesw
 
-all: cpuview
+all: cmon
 
-cpuview: main.o
+cmon: main.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f *.o cpuview
+	rm -f *.o cmon
